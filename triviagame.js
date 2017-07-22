@@ -3,7 +3,7 @@ $(".endGame").hide();
 
 
 
-var number = 120;
+var number = 4;
 $("#timer").html(number);
     var intervalId;
     $("#start").on("click",run);
@@ -58,7 +58,7 @@ var selectedAnswer10= $('.question10 input[type="radio"]:checked').attr("value")
  } else if (selectedAnswer1==="wrong"){
   wrongCounter++;
   $("#wrongCounter").html(wrongCounter);
- }
+ } 
  console.log(selectedAnswer1); 
 
 if (selectedAnswer2==="correct") {
