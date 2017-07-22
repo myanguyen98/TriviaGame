@@ -3,7 +3,7 @@ $(".endGame").hide();
 
 
 
-var number = 4;
+var number = 120;
 $("#timer").html(number);
     var intervalId;
     $("#start").on("click",run);
