@@ -1,67 +1,6 @@
 $(".main").hide();
+$(".endGame").hide();
 
-var trivia1 = {
-      question: "What was Hannah Montana's real life alter ego(in the show)?"
-    , answers: ["Lily Truscott","Tracy Van Horn","Miley Stewart","Miley Skeech"]
-    , correctAnswer: 2
-  };
-var trivia2 = {
-      question: "What was the show's theme song?"
-    , answers: ["Nobody's Perfect","This is the Life","One in a Million","The Best of Both Worlds"]
-    , correctAnswer: 3
-  };
-var trivia3 = {
-      question: "What was Hannah's celebrity on again-off again boyfriend's name?"
-    , answers: ["Jake Ryan","Oliver Oken","Troy Bolton","Jackson Stewart"]
-    , correctAnswer: 0
-  };
-var trivia4 = {
-      question: "When Lily and Miley had to create a country for their history class, what did Miley call hers?"
-    , answers: ["Mileytania","Mileytopia","Mylanta","Mileovia"]
-    , correctAnswer: 2
-  };
-var trivia5 = {
-      question: "What is Miley's horse's name?"
-    , answers: ["Spirit","Blue Jeans","Copper","Fender"]
-    , correctAnswer: 1
-  };
-var trivia6 = {
-      question: "What did Jackson try to break the world record for?"
-    , answers: ["Hot dog eating","Not blinking","Loudest burp","Pogo Sticking"]
-    , correctAnswer: 3
-  };
-var trivia7 = {
-      question: "Where does Miley live?"
-    , answers: ["Los Angeles, California","Malibu,California","Nashville,Tennessee","Miami,Florida"]
-    , correctAnswer: 1
-  };
-var trivia8 = {
-      question: "Miley's dad,Robby Ray, has her teacher, Ms. Kunkle over for a date. The date ends when they get in a fight over what?"
-    , answers: ["Tarragon","Miley's test Scores","Ms. Kunkle's last name","Robby Ray's goatee"]
-    , correctAnswer: 0
-  };
-var trivia9 = {
-      question: "What mascot does Miley become when she tries out for cheerleading?"
-    , answers: ["Shark","Tiger","Pirate","Knight"]
-    , correctAnswer: 2
-  };
-var trivia10 = {
-      question: "What are Miley and Lily's arch nemeses names?"
-    , answers: ["Sarah and Kelly","Rachel and Kylie","Samantha and Carly","Amber and Ashley"]
-    , correctAnswer: 3
-  };
-
-
-var correctGuesses=0;          
-for(var i = 1; i <= 10; i++) {
-  var radios = document.getElementsByName('group'+i);
-  for(var j = 0; j < radios.length; j++) {
-    var radio = radios[j];
-    if(radio.value === "correct" && radio.checked) {
-      correctGuesses++;
-    }
-  }
-}                   
 
 
 var number = 120;
@@ -72,21 +11,143 @@ $("#timer").html(number);
     function run() {
 
       intervalId = setInterval(decrement, 1000);
+
     }
     function decrement() {
+      console.log('im workings')
       number--;
       $("#timer").html(number)
+
+     if (number===0) {
+      clearInterval(intervalId);
+      checkAnswer1();
+      $(".endGame").show();
+      $(".main").hide();
+
+    } 
     };
     function show(){
       $(".main").show()
     };
-    function stop(){
-      number=0;
-    };
+    
 
-if (number===0) {
-  alert("hi")
-} else {}    
-      
+  
 
+
+var correctCounter=0;
+var wrongCounter=0;
+var unanswered=0;
+ 
+ console.log('Page Load');
+
+function checkAnswer1(){
+var selectedAnswer1= $('.question1 input[type="radio"]:checked').attr("value");
+var selectedAnswer2= $('.question2 input[type="radio"]:checked').attr("value");
+var selectedAnswer3= $('.question3 input[type="radio"]:checked').attr("value");
+var selectedAnswer4= $('.question4 input[type="radio"]:checked').attr("value");
+var selectedAnswer5= $('.question5 input[type="radio"]:checked').attr("value");
+var selectedAnswer6= $('.question6 input[type="radio"]:checked').attr("value");
+var selectedAnswer7= $('.question7 input[type="radio"]:checked').attr("value");
+var selectedAnswer8= $('.question8 input[type="radio"]:checked').attr("value");
+var selectedAnswer9= $('.question9 input[type="radio"]:checked').attr("value");
+var selectedAnswer10= $('.question10 input[type="radio"]:checked').attr("value");
+                    
+ if (selectedAnswer1==="correct") {
+  correctCounter++;
+  $("#correctCounter").html(correctCounter);
+ } else if (selectedAnswer1==="wrong"){
+  wrongCounter++;
+  $("#wrongCounter").html(wrongCounter);
+ }
+ console.log(selectedAnswer1); 
+
+if (selectedAnswer2==="correct") {
+  correctCounter++;
+  $("#correctCounter").html(correctCounter);
+ } else if (selectedAnswer2==="wrong"){
+  wrongCounter++;
+  $("#wrongCounter").html(wrongCounter);
+ }
+ console.log(selectedAnswer2); 
+
+if (selectedAnswer3==="correct") {
+  correctCounter++;
+  $("#correctCounter").html(correctCounter);
+ } else if (selectedAnswer3==="wrong"){
+  wrongCounter++;
+  $("#wrongCounter").html(wrongCounter);
+ }
+ console.log(selectedAnswer3); 
+
+
+if (selectedAnswer4==="correct") {
+  correctCounter++;
+  $("#correctCounter").html(correctCounter);
+ } else if (selectedAnswer4==="wrong"){
+  wrongCounter++;
+  $("#wrongCounter").html(wrongCounter);
+ }
+ console.log(selectedAnswer4); 
+
+
+if (selectedAnswer5==="correct") {
+  correctCounter++;
+  $("#correctCounter").html(correctCounter);
+ } else if (selectedAnswer5==="wrong"){
+  wrongCounter++;
+  $("#wrongCounter").html(wrongCounter);
+ }
+ console.log(selectedAnswer5); 
+
+
+if (selectedAnswer6==="correct") {
+  correctCounter++;
+  $("#correctCounter").html(correctCounter);
+ } else if (selectedAnswer6==="wrong"){
+  wrongCounter++;
+  $("#wrongCounter").html(wrongCounter);
+ }
+ console.log(selectedAnswer6); 
+
+
+if (selectedAnswer7==="correct") {
+  correctCounter++;
+  $("#correctCounter").html(correctCounter);
+ } else if (selectedAnswer7==="wrong"){
+  wrongCounter++;
+  $("#wrongCounter").html(wrongCounter);
+ }
+ console.log(selectedAnswer7); 
+
+
+if (selectedAnswer8==="correct") {
+  correctCounter++;
+  $("#correctCounter").html(correctCounter);
+ } else if (selectedAnswer8==="wrong"){
+  wrongCounter++;
+  $("#wrongCounter").html(wrongCounter);
+ }
+ console.log(selectedAnswer8); 
+
+
+if (selectedAnswer9==="correct") {
+  correctCounter++;
+  $("#correctCounter").html(correctCounter);
+ } else if (selectedAnswer9==="wrong"){
+  wrongCounter++;
+  $("#wrongCounter").html(wrongCounter);
+ }
+ console.log(selectedAnswer9); 
+
+
+if (selectedAnswer10==="correct") {
+  correctCounter++;
+  $("#correctCounter").html(correctCounter);
+ } else if (selectedAnswer10==="wrong"){
+  wrongCounter++;
+  $("#wrongCounter").html(wrongCounter);
+ }
+ console.log(selectedAnswer10); 
+
+};
 
